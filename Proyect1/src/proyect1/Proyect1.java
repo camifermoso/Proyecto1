@@ -1,8 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package proyect1;
+
+// Importar Interfaz
+import interfaz.Ventana1;
 
 /**
  *
@@ -14,11 +13,13 @@ public class Proyect1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("Hello World"); 
-        System.out.println("Proyecto 1");
-        System.out.println("Testing");
-        System.out.println("branch");
+        
+    // Interfaz Grafica
+    
+    // Inicializar Ventana 1
+    Ventana1 ventana = new Ventana1();
+    ventana.setVisible(true);
+    
     }
     
 }

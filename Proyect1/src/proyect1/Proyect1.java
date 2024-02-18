@@ -1,7 +1,8 @@
 package proyect1;
 
 // Importar Interfaz
-import interfaz.Ventana1;
+import interfaz.Home;
+import interfaz.NuevaSimulacion;
 
 /**
  *
@@ -15,11 +16,12 @@ public class Proyect1 {
     public static void main(String[] args) {
         
     // Interfaz Grafica
-    
-    // Inicializar Ventana 1
-    Ventana1 ventana = new Ventana1();
+    // Inicializar Ventanas
+    Home ventana = new Home();
     ventana.setVisible(true);
     
+    NuevaSimulacion ventana2 = new NuevaSimulacion();
+    ventana2.setVisible(true);
     }
     
 }

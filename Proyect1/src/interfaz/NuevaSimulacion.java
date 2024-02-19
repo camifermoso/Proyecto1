@@ -10,12 +10,15 @@ package interfaz;
  */
 public class NuevaSimulacion extends javax.swing.JFrame {
 
-    /**
-     * Creates new form NuevaSimulacion
-     */
-    public NuevaSimulacion() {
+    public static Home v1;
+    
+    public NuevaSimulacion(Home v1) {
         initComponents();
+        this.v1 = v1;
+        v1.setVisible(false);
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -27,21 +30,136 @@ public class NuevaSimulacion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        Exit = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        numciclos = new javax.swing.JTextField();
+        numhormigas = new javax.swing.JTextField();
+        ciudadpartida = new javax.swing.JTextField();
+        ciudadllegada = new javax.swing.JTextField();
+        Listo = new javax.swing.JButton();
+        Exit2 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jMenu1.setText("jMenu1");
+
+        jMenu2.setText("jMenu2");
+
+        jCheckBoxMenuItem1.setSelected(true);
+        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
+
+        Exit.setBackground(new java.awt.Color(0, 153, 255));
+        Exit.setText("X");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitActionPerformed(evt);
+            }
+        });
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, -1, -1));
+
+        jLabel1.setText("Número de ciclos a realizar:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, 20));
+
+        jLabel2.setText("Número de hormigas:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, 20));
+
+        jLabel3.setText("Ciudad de partida:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, -1, 20));
+
+        jLabel4.setText("Ciudad de llegada:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, -1, -1));
+
+        numciclos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numciclosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(numciclos, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 170, -1));
+
+        numhormigas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numhormigasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(numhormigas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 170, -1));
+
+        ciudadpartida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ciudadpartidaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ciudadpartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 170, -1));
+
+        ciudadllegada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ciudadllegadaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ciudadllegada, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 170, -1));
+
+        Listo.setBackground(new java.awt.Color(227, 31, 36));
+        Listo.setText("Listo");
+        Listo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ListoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Listo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, -1, -1));
+
+        Exit2.setBackground(new java.awt.Color(227, 31, 36));
+        Exit2.setText("X");
+        Exit2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Exit2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Exit2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 30));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/resizedhq.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_ExitActionPerformed
+
+    private void Exit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Exit2ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_Exit2ActionPerformed
+
+    private void numciclosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numciclosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numciclosActionPerformed
+
+    private void numhormigasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numhormigasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numhormigasActionPerformed
+
+    private void ciudadpartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ciudadpartidaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ciudadpartidaActionPerformed
+
+    private void ciudadllegadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ciudadllegadaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ciudadllegadaActionPerformed
+
+    private void ListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ListoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -73,11 +191,28 @@ public class NuevaSimulacion extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NuevaSimulacion().setVisible(true);
+                new NuevaSimulacion(v1).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Exit;
+    private javax.swing.JButton Exit2;
+    private javax.swing.JButton Listo;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JTextField ciudadllegada;
+    private javax.swing.JTextField ciudadpartida;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField numciclos;
+    private javax.swing.JTextField numhormigas;
     // End of variables declaration//GEN-END:variables
 }

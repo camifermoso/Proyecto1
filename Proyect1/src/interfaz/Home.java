@@ -1,5 +1,8 @@
 package interfaz;
 
+import java.awt.Color;
+
+
 /**
  *
  * @author camilafermosoiglesias
@@ -12,6 +15,7 @@ public class Home extends javax.swing.JFrame {
     public Home() {
         initComponents();
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -30,6 +34,7 @@ public class Home extends javax.swing.JFrame {
         EliminarCiudad = new javax.swing.JButton();
         GuardarGrafo = new javax.swing.JButton();
         CargarGrafo = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -37,7 +42,7 @@ public class Home extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, -1, -1));
 
-        Exit.setBackground(new java.awt.Color(0, 153, 255));
+        Exit.setBackground(new java.awt.Color(227, 31, 36));
         Exit.setText("X");
         Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -46,7 +51,8 @@ public class Home extends javax.swing.JFrame {
         });
         getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 30));
 
-        NuevaSimulacion.setBackground(new java.awt.Color(255, 51, 51));
+        NuevaSimulacion.setBackground(new java.awt.Color(227, 31, 36));
+        NuevaSimulacion.setForeground(new java.awt.Color(227, 31, 36));
         NuevaSimulacion.setText("Nueva Simulación");
         NuevaSimulacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,6 +61,7 @@ public class Home extends javax.swing.JFrame {
         });
         getContentPane().add(NuevaSimulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, -1, 30));
 
+        AgregarCiudad.setBackground(new java.awt.Color(227, 31, 36));
         AgregarCiudad.setText("Agregar Ciudad");
         AgregarCiudad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,6 +70,7 @@ public class Home extends javax.swing.JFrame {
         });
         getContentPane().add(AgregarCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, -1, 30));
 
+        EliminarCiudad.setBackground(new java.awt.Color(227, 31, 36));
         EliminarCiudad.setText("Eliminar Ciudad");
         EliminarCiudad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,6 +79,7 @@ public class Home extends javax.swing.JFrame {
         });
         getContentPane().add(EliminarCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, -1, 30));
 
+        GuardarGrafo.setBackground(new java.awt.Color(227, 31, 36));
         GuardarGrafo.setText("Guardar Grafo");
         GuardarGrafo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,6 +88,7 @@ public class Home extends javax.swing.JFrame {
         });
         getContentPane().add(GuardarGrafo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, -1, 30));
 
+        CargarGrafo.setBackground(new java.awt.Color(227, 31, 36));
         CargarGrafo.setText("Cargar Grafo");
         CargarGrafo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,6 +96,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CargarGrafo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, -1, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/resizedhq.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -95,7 +108,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_ExitActionPerformed
 
     private void NuevaSimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuevaSimulacionActionPerformed
-        // TODO add your handling code here:
+       NuevaSimulacion v2 = new NuevaSimulacion(this);
     }//GEN-LAST:event_NuevaSimulacionActionPerformed
 
     private void AgregarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarCiudadActionPerformed
@@ -149,7 +162,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AgregarCiudad;
     private javax.swing.JButton CargarGrafo;
@@ -157,6 +170,10 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton Exit;
     private javax.swing.JButton GuardarGrafo;
     private javax.swing.JButton NuevaSimulacion;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+   
+    
+
 }

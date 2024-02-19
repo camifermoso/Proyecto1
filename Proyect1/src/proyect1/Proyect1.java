@@ -20,8 +20,8 @@ public class Proyect1 {
     Home ventana = new Home();
     ventana.setVisible(true);
     
-    NuevaSimulacion ventana2 = new NuevaSimulacion();
-    ventana2.setVisible(true);
+    // NuevaSimulacion ventana2 = new NuevaSimulacion();
+    // ventana2.setVisible(true);
     }
-    
+     
 }

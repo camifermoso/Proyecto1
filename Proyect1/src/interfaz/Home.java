@@ -17,7 +17,17 @@ public class Home extends javax.swing.JFrame {
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        
+        // No se habilitan los botones al iniciar el programa ya que es necesario cargar un grafo primero
+        // para poder acceder a las siguientes opciones
+       
+        /*
         NuevaSimulacion.setEnabled(false);
+        AgregarCiudad.setEnabled(false);
+        EliminarCiudad.setEnabled(false);
+        GuardarGrafo.setEnabled(false);
+        */
+        
         // en el boton, get nuevasimulacion
         // y que modifique a true
     }
@@ -48,7 +58,7 @@ public class Home extends javax.swing.JFrame {
                 ExitActionPerformed(evt);
             }
         });
-        getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 30));
+        getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, 40, 30));
 
         NuevaSimulacion.setBackground(new java.awt.Color(227, 31, 36));
         NuevaSimulacion.setText("Nueva Simulación");
@@ -102,12 +112,10 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
-        Exit.setBackground(Color.GREEN);
         this.dispose();
     }//GEN-LAST:event_ExitActionPerformed
 
     private void NuevaSimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuevaSimulacionActionPerformed
-
         // NuevaSimulacion.setBackground(new java.awt.Color(5,5,5));
         NuevaSimulacion v2 = new NuevaSimulacion(this);
     }//GEN-LAST:event_NuevaSimulacionActionPerformed
@@ -126,6 +134,8 @@ public class Home extends javax.swing.JFrame {
 
     private void CargarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarGrafoActionPerformed
         CargarGrafo v5 = new CargarGrafo(this);
+        
+        //Aqui hay que poner que si se cargo un grafo, los otros botones se habilitan
     }//GEN-LAST:event_CargarGrafoActionPerformed
 
     /**
@@ -175,6 +185,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
    
+   
     
-
 }

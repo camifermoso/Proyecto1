@@ -27,6 +27,8 @@ public class NuevaSimulacion extends javax.swing.JFrame {
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         buttonGroup1 = new javax.swing.ButtonGroup();
         Exit = new javax.swing.JButton();
+        BackHome = new javax.swing.JButton();
+        BackHome1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -38,6 +40,8 @@ public class NuevaSimulacion extends javax.swing.JFrame {
         ciudadllegada = new javax.swing.JTextField();
         Listo = new javax.swing.JButton();
         Exit2 = new javax.swing.JButton();
+        BackHome2 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
@@ -52,6 +56,22 @@ public class NuevaSimulacion extends javax.swing.JFrame {
         Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitActionPerformed(evt);
+            }
+        });
+
+        BackHome.setBackground(new java.awt.Color(0, 153, 255));
+        BackHome.setText("←");
+        BackHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackHomeActionPerformed(evt);
+            }
+        });
+
+        BackHome1.setBackground(new java.awt.Color(0, 153, 255));
+        BackHome1.setText("←");
+        BackHome1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackHome1ActionPerformed(evt);
             }
         });
 
@@ -121,7 +141,21 @@ public class NuevaSimulacion extends javax.swing.JFrame {
                 Exit2ActionPerformed(evt);
             }
         });
-        getContentPane().add(Exit2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 30));
+        getContentPane().add(Exit2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, 40, 30));
+
+        BackHome2.setBackground(new java.awt.Color(0, 153, 255));
+        BackHome2.setText("←");
+        BackHome2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackHome2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BackHome2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 40, -1));
+
+        jLabel5.setFont(new java.awt.Font("Futura", 1, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("NUEVA SIMULACIÓN");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/background2.png"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -156,6 +190,24 @@ public class NuevaSimulacion extends javax.swing.JFrame {
     private void ListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ListoActionPerformed
+
+    private void BackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackHomeActionPerformed
+        this.setVisible(false);
+        v1.setLocationRelativeTo(null);
+        v1.setVisible(true);
+    }//GEN-LAST:event_BackHomeActionPerformed
+
+    private void BackHome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackHome1ActionPerformed
+        this.setVisible(false);
+        v1.setLocationRelativeTo(null);
+        v1.setVisible(true);
+    }//GEN-LAST:event_BackHome1ActionPerformed
+
+    private void BackHome2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackHome2ActionPerformed
+        this.setVisible(false);
+        v1.setLocationRelativeTo(null);
+        v1.setVisible(true);
+    }//GEN-LAST:event_BackHome2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,6 +245,9 @@ public class NuevaSimulacion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackHome;
+    private javax.swing.JButton BackHome1;
+    private javax.swing.JButton BackHome2;
     private javax.swing.JButton Exit;
     private javax.swing.JButton Exit2;
     private javax.swing.JButton Listo;
@@ -204,6 +259,7 @@ public class NuevaSimulacion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

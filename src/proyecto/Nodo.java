@@ -9,7 +9,7 @@ package proyecto;
  * @author santi
  */
 public class Nodo {
-
+// 0
     private String dato;
     private Nodo siguiente;
     private int feromonas;

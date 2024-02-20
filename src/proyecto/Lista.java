@@ -18,7 +18,7 @@ public class Lista {
         this.tamano = 0;
 
     }
-
+//0
     public void InsertarPrimero(Nodo nuevo) {
 
         if (this.primero == null) {
@@ -30,7 +30,7 @@ public class Lista {
             tamano++;
         }
     }
-
+//0
     public void InsertarFinal(Nodo nuevo) {
 
         if (this.primero == null) {
@@ -44,7 +44,7 @@ public class Lista {
             tamano++;
         }
     }
-
+//0
     public void EliminarGeneral(String dato) {
         if (this.primero != null) {
 
@@ -65,7 +65,7 @@ public class Lista {
 
         }
     }
-
+//0
     public Nodo FeromonasMax() {
         if (this.primero != null) {
             Nodo aux = this.primero;
@@ -80,7 +80,7 @@ public class Lista {
         }
         return null;    
     }
-    
+    //1
     public String ImprimirLista() {
         String lista = "";
         Nodo aux = this.primero;
@@ -93,7 +93,7 @@ public class Lista {
             }}
         return lista;
     }
-    
+    //1
     public boolean Buscar(String ciudad){
          if (this.primero != null) {
             Nodo aux = this.primero;
@@ -111,6 +111,24 @@ public class Lista {
 
         } else {
             return false;
+        }
+    }
+    
+//2 
+    public Nodo Buscar2(String ciudad) {
+        if (this.primero != null) {
+            Nodo aux = this.primero;
+            if (aux.getDato() == ciudad) {
+                return this.primero;
+            } else {
+                while (aux != null && aux.getDato() != ciudad) {
+                    aux = aux.getSiguiente();
+                }
+                return aux;
+            }
+
+        } else {
+            return null;
         }
     }
 }

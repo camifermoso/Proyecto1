@@ -13,11 +13,13 @@ public class Nodo {
     private String dato;
     private Nodo siguiente;
     private int feromonas;
+    int distancia;
 
-    public Nodo(String pal) {
+    public Nodo(String pal, int d) {
         this.dato = pal;
         this.siguiente = null;
         this.feromonas = 0;
+        this.distancia = d;
 
     }
 

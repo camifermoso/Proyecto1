@@ -80,4 +80,37 @@ public class Lista {
         }
         return null;    
     }
+    
+    public String ImprimirLista() {
+        String lista = "";
+        Nodo aux = this.primero;
+        if(aux!=  null){
+             lista = "El vertice " + aux.getDato() + " tiene como adyacentes a: ";
+            aux = aux.getSiguiente();
+            while (aux != null) {
+                lista += aux.getDato() + ", ";
+                aux = aux.getSiguiente();
+            }}
+        return lista;
+    }
+    
+    public boolean Buscar(String ciudad){
+         if (this.primero != null) {
+            Nodo aux = this.primero;
+            if (aux.getDato() == ciudad) {
+                return true;
+            } else {
+                while (aux != null && aux.getDato() != ciudad) {
+                    aux = aux.getSiguiente();
+                }
+                if(aux != null){
+                    return true;
+                }
+                return false;
+            }
+
+        } else {
+            return false;
+        }
+    }
 }

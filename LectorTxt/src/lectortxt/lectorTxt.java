@@ -3,18 +3,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package lectortxt;
+import javax.swing.*;
+import java.io.File;
 
-/**
- *
- * @author PC
- */
+
 public class lectorTxt {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
+
+
+public void cargarTxt(){
+        File archivoSelec;
+        JFileChooser selecArchivo;
+        selecArchivo = new JFileChooser();
+        selecArchivo.showOpenDialog(null);
+        archivoSelec = selecArchivo.getSelectedFile();
+        JOptionPane.showMessageDialog(null, "El archivo seleccionado es " + archivoSelec + 
+                   "\n y está ubicado en " + selecArchivo.getCurrentDirectory());
+}
+
 }

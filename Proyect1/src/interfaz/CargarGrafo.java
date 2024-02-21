@@ -55,7 +55,7 @@ public class CargarGrafo extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("CARGAR GRAFO");
         jLabel2.setPreferredSize(new java.awt.Dimension(129, 20));
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 320, 40));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 350, 40));
 
         jButton1.setText("Click aqui para cargar tu grafo");
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));

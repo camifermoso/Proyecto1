@@ -60,7 +60,8 @@ public class Home extends javax.swing.JFrame {
         });
         getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, 40, 30));
 
-        NuevaSimulacion.setBackground(new java.awt.Color(227, 31, 36));
+        NuevaSimulacion.setBackground(new java.awt.Color(255, 255, 255));
+        NuevaSimulacion.setForeground(new java.awt.Color(0, 0, 0));
         NuevaSimulacion.setText("Nueva Simulación");
         NuevaSimulacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,7 +70,8 @@ public class Home extends javax.swing.JFrame {
         });
         getContentPane().add(NuevaSimulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, -1, 30));
 
-        AgregarCiudad.setBackground(new java.awt.Color(227, 31, 36));
+        AgregarCiudad.setBackground(new java.awt.Color(255, 255, 255));
+        AgregarCiudad.setForeground(new java.awt.Color(0, 0, 0));
         AgregarCiudad.setText("Agregar Ciudad");
         AgregarCiudad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,7 +80,8 @@ public class Home extends javax.swing.JFrame {
         });
         getContentPane().add(AgregarCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, -1, 30));
 
-        EliminarCiudad.setBackground(new java.awt.Color(227, 31, 36));
+        EliminarCiudad.setBackground(new java.awt.Color(255, 255, 255));
+        EliminarCiudad.setForeground(new java.awt.Color(0, 0, 0));
         EliminarCiudad.setText("Eliminar Ciudad");
         EliminarCiudad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,7 +90,8 @@ public class Home extends javax.swing.JFrame {
         });
         getContentPane().add(EliminarCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, -1, 30));
 
-        GuardarGrafo.setBackground(new java.awt.Color(227, 31, 36));
+        GuardarGrafo.setBackground(new java.awt.Color(255, 255, 255));
+        GuardarGrafo.setForeground(new java.awt.Color(0, 0, 0));
         GuardarGrafo.setText("Guardar Grafo");
         GuardarGrafo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,14 +100,15 @@ public class Home extends javax.swing.JFrame {
         });
         getContentPane().add(GuardarGrafo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, -1, 30));
 
-        CargarGrafo.setBackground(new java.awt.Color(227, 31, 36));
+        CargarGrafo.setBackground(new java.awt.Color(255, 255, 255));
+        CargarGrafo.setForeground(new java.awt.Color(0, 0, 0));
         CargarGrafo.setText("Cargar Grafo");
         CargarGrafo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CargarGrafoActionPerformed(evt);
             }
         });
-        getContentPane().add(CargarGrafo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 120, 40));
+        getContentPane().add(CargarGrafo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 140, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/resizedhq.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

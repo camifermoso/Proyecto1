@@ -1,5 +1,7 @@
 package interfaz;
 
+import javax.swing.Action;
+
 /**
  *
  * @author camilafermosoiglesias
@@ -16,6 +18,13 @@ public class NuevaSimulacion extends javax.swing.JFrame {
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         
+        // La opcion para insertar las constantes no se debe mostrar inicialmente
+        valor1.setVisible(false);
+        valor1box.setVisible(false);
+        valor2.setVisible(false);
+        valor2box.setVisible(false);
+        valor3.setVisible(false);
+        valor3box.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -29,6 +38,13 @@ public class NuevaSimulacion extends javax.swing.JFrame {
         Exit = new javax.swing.JButton();
         BackHome = new javax.swing.JButton();
         BackHome1 = new javax.swing.JButton();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup4 = new javax.swing.ButtonGroup();
+        buttonGroup5 = new javax.swing.ButtonGroup();
+        buttonGroup6 = new javax.swing.ButtonGroup();
+        buttonGroup7 = new javax.swing.ButtonGroup();
+        buttonGroup8 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -42,6 +58,14 @@ public class NuevaSimulacion extends javax.swing.JFrame {
         Exit2 = new javax.swing.JButton();
         BackHome2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        constantes = new javax.swing.JComboBox<>();
+        valor1 = new javax.swing.JLabel();
+        valor1box = new javax.swing.JTextField();
+        valor2 = new javax.swing.JLabel();
+        valor2box = new javax.swing.JTextField();
+        valor3 = new javax.swing.JLabel();
+        valor3box = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
@@ -83,33 +107,33 @@ public class NuevaSimulacion extends javax.swing.JFrame {
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Número de ciclos a realizar:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, 20));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
 
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Número de hormigas:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, 20));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, -1, 20));
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Ciudad de partida:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, -1, 20));
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ciudad de llegada:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, -1, 20));
 
         numciclos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 numciclosActionPerformed(evt);
             }
         });
-        getContentPane().add(numciclos, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 170, -1));
+        getContentPane().add(numciclos, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 170, -1));
 
         numhormigas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 numhormigasActionPerformed(evt);
             }
         });
-        getContentPane().add(numhormigas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 170, -1));
+        getContentPane().add(numhormigas, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 170, -1));
 
         ciudadpartida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,6 +181,54 @@ public class NuevaSimulacion extends javax.swing.JFrame {
         jLabel5.setText("NUEVA SIMULACIÓN");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
 
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Constantes (α, β, ρ):");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, -1, 20));
+
+        constantes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Por defecto", "Ingresar valores" }));
+        constantes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                constantesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(constantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, -1, -1));
+
+        valor1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        valor1.setForeground(new java.awt.Color(0, 0, 0));
+        valor1.setText("α:");
+        getContentPane().add(valor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 20, -1));
+
+        valor1box.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                valor1boxActionPerformed(evt);
+            }
+        });
+        getContentPane().add(valor1box, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 80, -1));
+
+        valor2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        valor2.setForeground(new java.awt.Color(0, 0, 0));
+        valor2.setText("β:");
+        getContentPane().add(valor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 20, -1));
+
+        valor2box.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                valor2boxActionPerformed(evt);
+            }
+        });
+        getContentPane().add(valor2box, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 70, -1));
+
+        valor3.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        valor3.setForeground(new java.awt.Color(0, 0, 0));
+        valor3.setText("ρ:");
+        getContentPane().add(valor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 20, -1));
+
+        valor3box.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                valor3boxActionPerformed(evt);
+            }
+        });
+        getContentPane().add(valor3box, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, 80, -1));
+
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/background2.png"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -172,7 +244,8 @@ public class NuevaSimulacion extends javax.swing.JFrame {
     }//GEN-LAST:event_Exit2ActionPerformed
 
     private void numciclosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numciclosActionPerformed
-        // TODO add your handling code here:
+        //Se usa esta funcion para que la entrada por parte del usuario solo pueda ser un numero
+        
     }//GEN-LAST:event_numciclosActionPerformed
 
     private void numhormigasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numhormigasActionPerformed
@@ -209,6 +282,39 @@ public class NuevaSimulacion extends javax.swing.JFrame {
         v1.setVisible(true);
     }//GEN-LAST:event_BackHome2ActionPerformed
 
+    private void constantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_constantesActionPerformed
+        // Solo si el usuario selecciona la opcion para ingresar los valores de las constantes, deben aparecer
+        // los espacios para ello
+
+        if (constantes.getSelectedIndex() == 1){
+            valor1.setVisible(true);
+            valor1box.setVisible(true);
+            valor2.setVisible(true);
+            valor2box.setVisible(true);
+            valor3.setVisible(true);
+            valor3box.setVisible(true);
+        } else {
+            valor1.setVisible(false);
+            valor1box.setVisible(false);
+            valor2.setVisible(false);
+            valor2box.setVisible(false);
+            valor3.setVisible(false);
+            valor3box.setVisible(false);
+            }
+    }//GEN-LAST:event_constantesActionPerformed
+
+    private void valor1boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valor1boxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_valor1boxActionPerformed
+
+    private void valor2boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valor2boxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_valor2boxActionPerformed
+
+    private void valor3boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valor3boxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_valor3boxActionPerformed
+    
     /**
      * @param args the command line arguments
      */
@@ -252,8 +358,16 @@ public class NuevaSimulacion extends javax.swing.JFrame {
     private javax.swing.JButton Exit2;
     private javax.swing.JButton Listo;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.ButtonGroup buttonGroup5;
+    private javax.swing.ButtonGroup buttonGroup6;
+    private javax.swing.ButtonGroup buttonGroup7;
+    private javax.swing.ButtonGroup buttonGroup8;
     private javax.swing.JTextField ciudadllegada;
     private javax.swing.JTextField ciudadpartida;
+    private javax.swing.JComboBox<String> constantes;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -261,10 +375,17 @@ public class NuevaSimulacion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField numciclos;
     private javax.swing.JTextField numhormigas;
+    private javax.swing.JLabel valor1;
+    private javax.swing.JTextField valor1box;
+    private javax.swing.JLabel valor2;
+    private javax.swing.JTextField valor2box;
+    private javax.swing.JLabel valor3;
+    private javax.swing.JTextField valor3box;
     // End of variables declaration//GEN-END:variables
 }

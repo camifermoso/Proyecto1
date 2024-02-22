@@ -1,6 +1,7 @@
 package interfaz;
 
 import javax.swing.Action;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -105,25 +106,34 @@ public class NuevaSimulacion extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Número de ciclos a realizar:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Número de hormigas:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, -1, 20));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, -1, 20));
 
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Ciudad de partida:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, -1, 20));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, -1, 20));
 
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Ciudad de llegada:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, -1, 20));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, -1, 20));
 
         numciclos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 numciclosActionPerformed(evt);
+            }
+        });
+        numciclos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                numciclosKeyTyped(evt);
             }
         });
         getContentPane().add(numciclos, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 170, -1));
@@ -133,6 +143,11 @@ public class NuevaSimulacion extends javax.swing.JFrame {
                 numhormigasActionPerformed(evt);
             }
         });
+        numhormigas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                numhormigasKeyTyped(evt);
+            }
+        });
         getContentPane().add(numhormigas, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 170, -1));
 
         ciudadpartida.addActionListener(new java.awt.event.ActionListener() {
@@ -140,11 +155,21 @@ public class NuevaSimulacion extends javax.swing.JFrame {
                 ciudadpartidaActionPerformed(evt);
             }
         });
+        ciudadpartida.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ciudadpartidaKeyTyped(evt);
+            }
+        });
         getContentPane().add(ciudadpartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 170, -1));
 
         ciudadllegada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ciudadllegadaActionPerformed(evt);
+            }
+        });
+        ciudadllegada.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ciudadllegadaKeyTyped(evt);
             }
         });
         getContentPane().add(ciudadllegada, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 170, -1));
@@ -181,9 +206,10 @@ public class NuevaSimulacion extends javax.swing.JFrame {
         jLabel5.setText("NUEVA SIMULACIÓN");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Constantes (α, β, ρ):");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, -1, 20));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, 20));
 
         constantes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Por defecto", "Ingresar valores" }));
         constantes.addActionListener(new java.awt.event.ActionListener() {
@@ -203,6 +229,11 @@ public class NuevaSimulacion extends javax.swing.JFrame {
                 valor1boxActionPerformed(evt);
             }
         });
+        valor1box.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                valor1boxKeyTyped(evt);
+            }
+        });
         getContentPane().add(valor1box, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 80, -1));
 
         valor2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
@@ -215,6 +246,11 @@ public class NuevaSimulacion extends javax.swing.JFrame {
                 valor2boxActionPerformed(evt);
             }
         });
+        valor2box.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                valor2boxKeyTyped(evt);
+            }
+        });
         getContentPane().add(valor2box, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 70, -1));
 
         valor3.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
@@ -225,6 +261,11 @@ public class NuevaSimulacion extends javax.swing.JFrame {
         valor3box.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 valor3boxActionPerformed(evt);
+            }
+        });
+        valor3box.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                valor3boxKeyTyped(evt);
             }
         });
         getContentPane().add(valor3box, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, 80, -1));
@@ -261,7 +302,22 @@ public class NuevaSimulacion extends javax.swing.JFrame {
     }//GEN-LAST:event_ciudadllegadaActionPerformed
 
     private void ListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListoActionPerformed
-        // TODO add your handling code here:
+        // Cuando este boton sea presionado, queremos que todos los campos de texto se vacien
+        numciclos.setText("");
+        numhormigas.setText("");
+        valor1box.setText("");
+        valor2box.setText("");
+        valor3box.setText("");
+        ciudadpartida.setText("");
+        ciudadllegada.setText("");
+        
+        // Tambien se vuelve a poner las constantes en por defecto
+        valor1.setVisible(false);
+        valor1box.setVisible(false);
+        valor2.setVisible(false);
+        valor2box.setVisible(false);
+        valor3.setVisible(false);
+        valor3box.setVisible(false);
     }//GEN-LAST:event_ListoActionPerformed
 
     private void BackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackHomeActionPerformed
@@ -314,6 +370,71 @@ public class NuevaSimulacion extends javax.swing.JFrame {
     private void valor3boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valor3boxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_valor3boxActionPerformed
+
+    private void numciclosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numciclosKeyTyped
+        // De este modo el usuario solo va a poder ingresar numeros
+        int key = evt.getKeyChar();
+        boolean num = key >= 48 && key <=57;
+        if (!num) {
+            evt.consume();
+            // Si el usuario intenta ingresar un valor que no sea un numero, se mostrara un mensaje indicandole que solo puede ingresar numeros
+            JOptionPane.showMessageDialog(null, "Solo puede ingresar numeros");
+        }
+    }//GEN-LAST:event_numciclosKeyTyped
+
+    private void numhormigasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numhormigasKeyTyped
+        // De este modo el usuario solo va a poder ingresar numeros    
+        int key = evt.getKeyChar();
+        boolean num = key >= 48 && key <=57;
+        if (!num) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_numhormigasKeyTyped
+
+    private void valor1boxKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_valor1boxKeyTyped
+        // De este modo el usuario solo va a poder ingresar numeros    
+        int key = evt.getKeyChar();
+        boolean num = key >= 48 && key <=57;
+        if (!num) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_valor1boxKeyTyped
+
+    private void valor2boxKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_valor2boxKeyTyped
+        // De este modo el usuario solo va a poder ingresar numeros    
+        int key = evt.getKeyChar();
+        boolean num = key >= 48 && key <=57;
+        if (!num) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_valor2boxKeyTyped
+
+    private void valor3boxKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_valor3boxKeyTyped
+        // De este modo el usuario solo va a poder ingresar numeros    
+        int key = evt.getKeyChar();
+        boolean num = key >= 48 && key <=57;
+        if (!num) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_valor3boxKeyTyped
+
+    private void ciudadpartidaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ciudadpartidaKeyTyped
+        // De este modo el usuario solo va a poder ingresar numeros    
+        int key = evt.getKeyChar();
+        boolean num = key >= 48 && key <=57;
+        if (!num) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_ciudadpartidaKeyTyped
+
+    private void ciudadllegadaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ciudadllegadaKeyTyped
+        // De este modo el usuario solo va a poder ingresar numeros    
+        int key = evt.getKeyChar();
+        boolean num = key >= 48 && key <=57;
+        if (!num) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_ciudadllegadaKeyTyped
     
     /**
      * @param args the command line arguments

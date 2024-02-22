@@ -26,6 +26,13 @@ public class AgregarCiudad extends javax.swing.JFrame {
         Exit = new javax.swing.JButton();
         BackHome2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        nombreciudad = new javax.swing.JTextField();
+        agregarciudad = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        destino = new javax.swing.JComboBox<>();
+        distancia = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         jLabel5.setFont(new java.awt.Font("Futura", 1, 36)); // NOI18N
@@ -61,6 +68,46 @@ public class AgregarCiudad extends javax.swing.JFrame {
         jLabel6.setText("AGREGAR CIUDAD");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Nombre:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, -1, -1));
+
+        nombreciudad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nombreciudadKeyTyped(evt);
+            }
+        });
+        getContentPane().add(nombreciudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 170, -1));
+
+        agregarciudad.setText("Agregar ciudad");
+        agregarciudad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarciudadActionPerformed(evt);
+            }
+        });
+        getContentPane().add(agregarciudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Destino:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Distancia:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, -1, -1));
+
+        destino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(destino, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, -1, -1));
+
+        distancia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                distanciaKeyTyped(evt);
+            }
+        });
+        getContentPane().add(distancia, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 210, 80, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/background3.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -78,10 +125,33 @@ public class AgregarCiudad extends javax.swing.JFrame {
         v1.setVisible(true);
     }//GEN-LAST:event_BackHome2ActionPerformed
 
+    private void nombreciudadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreciudadKeyTyped
+        // De este modo el usuario solo va a poder ingresar numeros    
+        int key = evt.getKeyChar();
+        boolean num = key >= 48 && key <=57;
+        if (!num) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_nombreciudadKeyTyped
+
+    private void distanciaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_distanciaKeyTyped
+        // De este modo el usuario solo va a poder ingresar numeros    
+        int key = evt.getKeyChar();
+        boolean num = key >= 48 && key <=57;
+        if (!num) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_distanciaKeyTyped
+
+    private void agregarciudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarciudadActionPerformed
+        // Cuando se haga click en este boton, queremos que quede en blanco la caja de texto
+        nombreciudad.setText("");
+    }//GEN-LAST:event_agregarciudadActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -113,12 +183,20 @@ public class AgregarCiudad extends javax.swing.JFrame {
         });
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackHome2;
     private javax.swing.JButton Exit;
+    private javax.swing.JButton agregarciudad;
+    private javax.swing.JComboBox<String> destino;
+    private javax.swing.JTextField distancia;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField nombreciudad;
     // End of variables declaration//GEN-END:variables
 }

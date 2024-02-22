@@ -27,6 +27,9 @@ public class EliminarCiudad extends javax.swing.JFrame {
         Exit = new javax.swing.JButton();
         BackHome2 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        ciudadaeliminar = new javax.swing.JTextField();
+        eliminarciudad = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jLabel6.setFont(new java.awt.Font("Futura", 1, 36)); // NOI18N
@@ -64,6 +67,15 @@ public class EliminarCiudad extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("ELIMINAR CIUDAD");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Ciudad que desea eliminar:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, 20));
+        getContentPane().add(ciudadaeliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 150, -1));
+
+        eliminarciudad.setText("Eliminar");
+        getContentPane().add(eliminarciudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 180, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/background3.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -120,7 +132,10 @@ public class EliminarCiudad extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackHome2;
     private javax.swing.JButton Exit;
+    private javax.swing.JTextField ciudadaeliminar;
+    private javax.swing.JButton eliminarciudad;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;

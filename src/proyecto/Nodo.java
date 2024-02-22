@@ -9,17 +9,19 @@ package proyecto;
  * @author santi
  */
 public class Nodo {
-// 0
+// 0,3
     private String dato;
     private Nodo siguiente;
-    private int feromonas;
+    private double feromonas;
     int distancia;
+    double acumulado;
 
     public Nodo(String pal, int d) {
         this.dato = pal;
         this.siguiente = null;
         this.feromonas = 0;
         this.distancia = d;
+        this.acumulado = 0;
 
     }
 
@@ -54,14 +56,14 @@ public class Nodo {
     /**
      * @return the feromonas
      */
-    public int getFeromonas() {
+    public double getFeromonas() {
         return feromonas;
     }
 
     /**
      * @param feromonas the feromonas to set
      */
-    public void setFeromonas(int feromonas) {
+    public void setFeromonas(double feromonas) {
         this.feromonas = feromonas;
     }
 }

@@ -26,10 +26,20 @@ public class Proyecto {
         grafo.InsertarLista("2", "3", 3);
         grafo.InsertarLista("1", "4", 6);
         grafo.InsertarLista("1", "3", 7);
+//        grafo.InsertarLista("2", "4", 1);
+        grafo.iniciarFeromonas();
+       grafo.ultima = 3;
+//4 
+        for (int j = 0; j < 10; j++) {
+            for (int i = 0; i < 10; i++) {
+                Hormiga a = grafo.Profundidad(1, 1);
+                System.out.println(a.recorrido);
+                grafo.actualizarAcumuladoFeromonas(a);
+            }
+            grafo.actualizarFeromonasFinal(0.5);
+        }
         
-        grafo.Eliminar("2");
-
-        grafo.Imprimir();
+        
     }
 
 }

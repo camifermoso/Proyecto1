@@ -114,11 +114,11 @@ public class Lista {
         }
     }
     
-//2 
+//2,4
     public Nodo Buscar2(String ciudad) {
         if (this.primero != null) {
             Nodo aux = this.primero;
-            if (aux.getDato() == ciudad) {
+            if (aux.getDato().equals(ciudad)) {
                 return this.primero;
             } else {
                 while (aux != null && aux.getDato() != ciudad) {

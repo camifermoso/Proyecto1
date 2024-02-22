@@ -9,9 +9,9 @@ package proyecto;
  * @author santi
  */
 public class Hormiga {
-//3
+//3,4
     String recorrido;
-    int distancia;
+    double distancia;
     
     public Hormiga(){
         recorrido = "";

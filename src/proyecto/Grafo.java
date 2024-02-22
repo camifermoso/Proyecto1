@@ -24,7 +24,7 @@ public class Grafo {
         this.cantidad = 0;
         this.vertices = new Lista[max];
         int primero = 0;
-        ultima = 0;
+        int ultima = 3;
         for (int i = 0; i < max; i++) {
             this.vertices[i] = new Lista();
         }
@@ -99,7 +99,8 @@ public class Grafo {
         System.out.println(lista);
         return lista;
     }
-//3
+//3,4
+
     public Lista buscar(String nombre) {
         for (int i = 0; i < this.maximo; i++) {
             if (this.vertices[i].primero.getDato().equals(nombre)) {
@@ -119,25 +120,31 @@ public class Grafo {
 //        }
 //        return m;
 //    }
-//2,3 
+//2,3,4 
     public double Sumatoria(int posicion, boolean[] visitados, int alpha, int beta) {
         double T = 1;
         double sum = 0;
         for (int i = 0; i < this.maximo; i++) {
-            if (i != posicion && !visitados[i] && this.vertices[posicion].Buscar(this.vertices[i].primero.getDato())) {
-                sum += Math.pow(1 / this.vertices[posicion].Buscar2(this.vertices[i].primero.getDato()).getFeromonas(), alpha) * Math.pow(1 / this.vertices[posicion].Buscar2(this.vertices[i].primero.getDato()).distancia, beta);
+            if (i != posicion && !visitados[i] && this.vertices[i].primero != null && this.vertices[posicion].Buscar(this.vertices[i].primero.getDato())) {
+//                System.out.println(this.vertices[posicion].Buscar2(this.vertices[i].primero.getDato()).getFeromonas());
+//                System.out.println(this.vertices[posicion].Buscar2(this.vertices[i].primero.getDato()).getDistancia());
+                sum += Math.pow(this.vertices[posicion].Buscar2(this.vertices[i].primero.getDato()).getFeromonas(), alpha) * Math.pow(1 / this.vertices[posicion].Buscar2(this.vertices[i].primero.getDato()).getDistancia(), beta);
+//                System.out.println(sum);
             }
         }
         return sum;
 
     }
 
-//2,3
+//2,3,4
     public double calcularProb(int posicion, boolean[] visitados, int posicion2, int alpha, int beta) {
         double sumatoria = this.Sumatoria(posicion, visitados, alpha, beta);
-        return Math.pow(1 / this.vertices[posicion].Buscar2(this.vertices[posicion2].primero.getDato()).getFeromonas(), alpha) * Math.pow(1 / this.vertices[posicion].Buscar2(this.vertices[posicion2].primero.getDato()).distancia, beta) / sumatoria;
+        System.out.println(sumatoria);
+        System.out.println("a----- " + this.vertices[posicion].Buscar2(this.vertices[posicion2].primero.getDato()).getFeromonas());
+        System.out.println("b------" + this.vertices[posicion].Buscar2(this.vertices[posicion2].primero.getDato()).getDistancia());
+        return (Math.pow(this.vertices[posicion].Buscar2(this.vertices[posicion2].primero.getDato()).getFeromonas(), alpha) * Math.pow(1 / this.vertices[posicion].Buscar2(this.vertices[posicion2].primero.getDato()).getDistancia(), beta)) / sumatoria;
     }
-//2,3 
+//2,3,4
 
     public void Recorrer(Hormiga h, int posicion, boolean[] visitados, int alpha, int beta) {
         visitados[posicion] = true;
@@ -145,20 +152,25 @@ public class Grafo {
         Random r = new Random();
         double randomnum = r.nextDouble();
         double probAcumulada = 0;
+         System.out.println(posicion + "   " + this.ultima);
         if (posicion != this.ultima) {
+           
             for (int i = 0; i < this.maximo; i++) {
-                if (i != posicion && !visitados[i] && this.vertices[posicion].Buscar(this.vertices[i].primero.getDato())) {
+                if (i != posicion && !visitados[i] && this.vertices[i].primero != null && this.vertices[posicion].Buscar(this.vertices[i].primero.getDato())) {
                     probAcumulada += this.calcularProb(posicion, visitados, i, alpha, beta);
+                    System.out.println("PROBABILIDAD " + probAcumulada);
                 }
                 if (probAcumulada > randomnum) {
-                    h.distancia += this.vertices[posicion].Buscar2(this.vertices[i].primero.getDato()).distancia;
+                    System.out.println(this.vertices[posicion].primero.getDato() + " tiene una arista con " + this.vertices[i].primero.getDato());
+                    h.distancia += this.vertices[posicion].Buscar2(this.vertices[i].primero.getDato()).getDistancia();
                     this.Recorrer(h, i, visitados, alpha, beta);
+                    break;
                 }
 
             }
         }
     }
-//2,3
+//2,3,4
 
     public Hormiga Profundidad(int alpha, int beta) {
         boolean visitados[] = new boolean[maximo];
@@ -166,34 +178,73 @@ public class Grafo {
         for (int i = 0; i < this.maximo; i++) { //inicializar vector con campos false
             visitados[i] = false;
         }
-        for (int i = 0; i < this.maximo; i++) { //Relanza el recorrido en cada
-            if (!visitados[i]) { //vértice visitado
-                Recorrer(h, i, visitados, alpha, beta);
-            }
-        }
+        //Relanza el recorrido en cada
+        //vértice visitado
+        Recorrer(h, primero, visitados, alpha, beta);
+
         return h;
     }
-//3
+//3,4
+
     public void iniciarFeromonas() {
         for (int i = 0; i < this.maximo; i++) {
             Nodo aux = this.vertices[i].primero;
             if (aux != null) {
                 aux = aux.getSiguiente();
                 while (aux != null) {
-                    aux.setFeromonas(1 / this.cantidad);
-                    aux.acumulado = 0;
+                    aux.setFeromonas(1 / (double) this.cantidad);
+
+                    aux.setAcumulado(0);
                     aux = aux.getSiguiente();
                 }
             }
         }
     }
-//3
+//3,4
+
     public void actualizarAcumuladoFeromonas(Hormiga h) {
         String[] ciudades = h.recorrido.split(",");
         for (int i = 0; i < ciudades.length; i++) {
             if (i + 1 < ciudades.length) {
-                this.buscar(ciudades[i]).Buscar2(ciudades[i + 1]).acumulado += 1 / h.distancia;
-                this.buscar(ciudades[i + 1]).Buscar2(ciudades[i]).acumulado += 1 / h.distancia;
+//                System.out.println(ciudades[i ]+  ""+ ciudades[i + 1]);
+                this.buscar(ciudades[i]).Buscar2(ciudades[i + 1]).setAcumulado(this.buscar(ciudades[i]).Buscar2(ciudades[i + 1]).getAcumulado() + 1 / h.distancia);
+                this.buscar(ciudades[i + 1]).Buscar2(ciudades[i]).setAcumulado(this.buscar(ciudades[i + 1]).Buscar2(ciudades[i]).getAcumulado() + 1 / h.distancia);
+            }
+        }
+    }
+//4
+    public void cambiarCiudadPartida(String dato) {
+        if (this.cantidad != 0) {
+            for (int i = 0; i < this.maximo; i++) {
+                if (this.vertices[i].primero != null && this.vertices[i].primero.getDato().equals(dato)) {
+                    this.primero = i;     
+                }
+            }
+        }
+    }
+//4
+
+    public void cambiarCiudadLlegada(String dato) {
+        if (this.cantidad != 0) {
+            for (int i = 0; i < this.maximo; i++) {
+                if (this.vertices[i].primero != null && this.vertices[i].primero.getDato().equals(dato)) {
+                    this.ultima = i;
+                }
+            }
+        }
+    }
+ //4
+ 
+    public void actualizarFeromonasFinal(double rho){
+        for (int i = 0; i < this.maximo; i++) {
+            Nodo aux = this.vertices[i].primero;
+            if (aux != null) {
+                aux = aux.getSiguiente();
+                while (aux != null) {
+                    aux.setFeromonas(aux.getFeromonas()* (1-rho) + aux.getAcumulado());
+                    aux.setAcumulado(0);
+                    aux = aux.getSiguiente();
+                }
             }
         }
     }

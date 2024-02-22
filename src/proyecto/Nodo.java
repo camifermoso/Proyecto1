@@ -9,17 +9,17 @@ package proyecto;
  * @author santi
  */
 public class Nodo {
-// 0,3
+// 0,3,4
     private String dato;
     private Nodo siguiente;
     private double feromonas;
-    int distancia;
-    double acumulado;
+    private double distancia;
+    private double acumulado;
 
-    public Nodo(String pal, int d) {
+    public Nodo(String pal, double d) {
         this.dato = pal;
         this.siguiente = null;
-        this.feromonas = 0;
+        this.feromonas = 1/4;
         this.distancia = d;
         this.acumulado = 0;
 
@@ -65,5 +65,33 @@ public class Nodo {
      */
     public void setFeromonas(double feromonas) {
         this.feromonas = feromonas;
+    }
+
+    /**
+     * @return the distancia
+     */
+    public double getDistancia() {
+        return distancia;
+    }
+
+    /**
+     * @param distancia the distancia to set
+     */
+    public void setDistancia(double distancia) {
+        this.distancia = distancia;
+    }
+
+    /**
+     * @return the acumulado
+     */
+    public double getAcumulado() {
+        return acumulado;
+    }
+
+    /**
+     * @param acumulado the acumulado to set
+     */
+    public void setAcumulado(double acumulado) {
+        this.acumulado = acumulado;
     }
 }

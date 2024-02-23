@@ -8,8 +8,12 @@ import java.util.Random;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author santi
+ * @Descripcion 
+ * @author Santiago
+ * @param 
+ * @retorna 
+ * @see
+ * @version 23/02/2024
  */
 public class Grafo {
 
@@ -30,7 +34,7 @@ public class Grafo {
         }
     }
 //0,1
-
+    //
     public void Insertar(String dato) {
         Nodo nuevo = new Nodo(dato, 0);
         if (this.cantidad < 20) {
@@ -59,7 +63,7 @@ public class Grafo {
         }
     }
 //0,1
-
+    //
     public void Eliminar(String dato) {
         if (this.cantidad != 0) {
             for (int i = 0; i < this.maximo; i++) {
@@ -74,7 +78,7 @@ public class Grafo {
         }
     }
 //0,1
-
+    //
     public void InsertarLista(String dato, String dato2, int dist) {
         if (this.cantidad != 0) {
             for (int i = 0; i < this.maximo; i++) {
@@ -88,7 +92,7 @@ public class Grafo {
         }
     }
 //1
-
+    //
     public String Imprimir() {
         String lista = "";
         if (this.cantidad != 0) {
@@ -100,7 +104,7 @@ public class Grafo {
         return lista;
     }
 //3,4
-
+    //
     public Lista buscar(String nombre) {
         for (int i = 0; i < this.maximo; i++) {
             if (this.vertices[i].primero.getDato().equals(nombre)) {
@@ -111,6 +115,7 @@ public class Grafo {
     }
 
 //2,3 
+      //
 //    public int ciuDisponibles(int posicion, boolean[] visitados) {
 //        int m = 0;
 //        for (int i = 0; i < this.maximo; i++) {
@@ -121,6 +126,7 @@ public class Grafo {
 //        return m;
 //    }
 //2,3,4 
+    //
     public double Sumatoria(int posicion, boolean[] visitados, int alpha, int beta) {
         double T = 1;
         double sum = 0;
@@ -135,8 +141,8 @@ public class Grafo {
         return sum;
 
     }
-
 //2,3,4
+    //
     public double calcularProb(int posicion, boolean[] visitados, int posicion2, int alpha, int beta) {
         double sumatoria = this.Sumatoria(posicion, visitados, alpha, beta);
         System.out.println(sumatoria);
@@ -145,7 +151,7 @@ public class Grafo {
         return (Math.pow(this.vertices[posicion].Buscar2(this.vertices[posicion2].primero.getDato()).getFeromonas(), alpha) * Math.pow(1 / this.vertices[posicion].Buscar2(this.vertices[posicion2].primero.getDato()).getDistancia(), beta)) / sumatoria;
     }
 //2,3,4
-
+    //
     public void Recorrer(Hormiga h, int posicion, boolean[] visitados, int alpha, int beta) {
         visitados[posicion] = true;
         h.recorrido += this.vertices[posicion].primero.getDato() + ",";
@@ -171,7 +177,7 @@ public class Grafo {
         }
     }
 //2,3,4
-
+    //
     public Hormiga Profundidad(int alpha, int beta) {
         boolean visitados[] = new boolean[maximo];
         Hormiga h = new Hormiga();
@@ -185,7 +191,7 @@ public class Grafo {
         return h;
     }
 //3,4
-
+    //
     public void iniciarFeromonas() {
         for (int i = 0; i < this.maximo; i++) {
             Nodo aux = this.vertices[i].primero;
@@ -201,7 +207,7 @@ public class Grafo {
         }
     }
 //3,4
-
+    //
     public void actualizarAcumuladoFeromonas(Hormiga h) {
         String[] ciudades = h.recorrido.split(",");
         for (int i = 0; i < ciudades.length; i++) {
@@ -213,6 +219,7 @@ public class Grafo {
         }
     }
 //4
+    //
     public void cambiarCiudadPartida(String dato) {
         if (this.cantidad != 0) {
             for (int i = 0; i < this.maximo; i++) {
@@ -234,7 +241,7 @@ public class Grafo {
         }
     }
  //4
- 
+    //
     public void actualizarFeromonasFinal(double rho){
         for (int i = 0; i < this.maximo; i++) {
             Nodo aux = this.vertices[i].primero;

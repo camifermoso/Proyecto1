@@ -5,8 +5,12 @@
 package proyecto;
 
 /**
- *
- * @author santi
+ * @Descripcion 
+ * @author Santiago
+ * @param 
+ * @retorna 
+ * @see
+ * @version 23/02/2024
  */
 public class Lista {
 
@@ -19,6 +23,7 @@ public class Lista {
 
     }
 //0
+    //
     public void InsertarPrimero(Nodo nuevo) {
 
         if (this.primero == null) {
@@ -31,6 +36,7 @@ public class Lista {
         }
     }
 //0
+    //
     public void InsertarFinal(Nodo nuevo) {
 
         if (this.primero == null) {
@@ -45,6 +51,7 @@ public class Lista {
         }
     }
 //0
+    //
     public void EliminarGeneral(String dato) {
         if (this.primero != null) {
 
@@ -66,6 +73,7 @@ public class Lista {
         }
     }
 //0
+    //
     public Nodo FeromonasMax() {
         if (this.primero != null) {
             Nodo aux = this.primero;
@@ -80,7 +88,8 @@ public class Lista {
         }
         return null;    
     }
-    //1
+//1
+    //
     public String ImprimirLista() {
         String lista = "";
         Nodo aux = this.primero;
@@ -93,7 +102,8 @@ public class Lista {
             }}
         return lista;
     }
-    //1
+//1
+    //
     public boolean Buscar(String ciudad){
          if (this.primero != null) {
             Nodo aux = this.primero;
@@ -113,8 +123,8 @@ public class Lista {
             return false;
         }
     }
-    
 //2,4
+    //
     public Nodo Buscar2(String ciudad) {
         if (this.primero != null) {
             Nodo aux = this.primero;

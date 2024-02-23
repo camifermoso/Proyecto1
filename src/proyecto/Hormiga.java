@@ -5,8 +5,12 @@
 package proyecto;
 
 /**
- *
- * @author santi
+ * @Descripcion 
+ * @author Santiago
+ * @param 
+ * @retorna 
+ * @see
+ * @version 23/02/2024
  */
 public class Hormiga {
 //3,4

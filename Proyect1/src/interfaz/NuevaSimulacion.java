@@ -1,17 +1,23 @@
 package interfaz;
 
-import javax.swing.Action;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
  * @author camilafermosoiglesias
+ * @version 1.9
+ * @since 13-02-2024
  */
 
 public class NuevaSimulacion extends javax.swing.JFrame {
 
     public static Home v1;
-    
+    /**
+     * 
+     * @param v1
+     * @param Inicializa la ventana y esconde los botones que no estan en uso
+     */
     public NuevaSimulacion(Home v1) {
         initComponents();
         this.v1 = v1;
@@ -25,7 +31,7 @@ public class NuevaSimulacion extends javax.swing.JFrame {
         valor2.setVisible(false);
         valor2box.setVisible(false);
         valor3.setVisible(false);
-        valor3box.setVisible(false);
+        valor3box.setVisible(false);  
     }
 
     @SuppressWarnings("unchecked")
@@ -275,33 +281,72 @@ public class NuevaSimulacion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * @param text X
+     * @param onClickAction Se cierra el programa
+     */
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         this.dispose();
     }//GEN-LAST:event_ExitActionPerformed
-
+    
     private void Exit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Exit2ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_Exit2ActionPerformed
-
+    
+    
     private void numciclosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numciclosActionPerformed
-        //Se usa esta funcion para que la entrada por parte del usuario solo pueda ser un numero
-        
+
     }//GEN-LAST:event_numciclosActionPerformed
 
     private void numhormigasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numhormigasActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_numhormigasActionPerformed
 
     private void ciudadpartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ciudadpartidaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_ciudadpartidaActionPerformed
 
     private void ciudadllegadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ciudadllegadaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_ciudadllegadaActionPerformed
 
+    /*
+     * @param text Listo
+     * @param onClickAction Guarda los datos ingresados por el usuario
+     */
     private void ListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListoActionPerformed
+        // Se deben acceder a los valores para poder guardarlos
+        int numerociclos = 0;
+        numerociclos = Integer.parseInt(numciclos.getText());
+        
+        int numerohormigas = 0;
+        numerohormigas = Integer.parseInt(numhormigas.getText());
+        
+        int ciudaddepartida = 0;
+        ciudaddepartida = Integer.parseInt(ciudadpartida.getText());
+        
+        int ciudaddellegada = 0;
+        ciudaddellegada = Integer.parseInt(ciudadllegada.getText());
+       
+        /**
+         * Valores de las constantes
+         * Si se decide seleccionar el index, se asignan las variables segun lo que el usuario ingrese
+         * En cualquier otro caso, se toman los valores predeterminado
+         */
+        if (constantes.getSelectedIndex() == 1){
+            int ctte1 = 0;
+            ctte1 = Integer.parseInt(valor1box.getText());
+            int ctte2 = 0;
+            ctte2 = Integer.parseInt(valor2box.getText());
+            int ctte3 = 0;
+            ctte3 = Integer.parseInt(valor3box.getText());
+        } else {
+            int ctte1 = 1;
+            int ctte2 = 2;
+            int ctte3 = 3;  
+            }
+        
         // Cuando este boton sea presionado, queremos que todos los campos de texto se vacien
         numciclos.setText("");
         numhormigas.setText("");
@@ -320,6 +365,11 @@ public class NuevaSimulacion extends javax.swing.JFrame {
         valor3box.setVisible(false);
     }//GEN-LAST:event_ListoActionPerformed
 
+    /**
+     * 
+     * @param text ←
+     * @param onClickAction Volver a la ventana home (v1)
+     */
     private void BackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackHomeActionPerformed
         this.setVisible(false);
         v1.setLocationRelativeTo(null);
@@ -338,6 +388,9 @@ public class NuevaSimulacion extends javax.swing.JFrame {
         v1.setVisible(true);
     }//GEN-LAST:event_BackHome2ActionPerformed
 
+    /**
+     * Permite que el usuario ingrese las constantes, o que se tomen los valores por defecto 
+     */
     private void constantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_constantesActionPerformed
         // Solo si el usuario selecciona la opcion para ingresar los valores de las constantes, deben aparecer
         // los espacios para ello
@@ -360,17 +413,21 @@ public class NuevaSimulacion extends javax.swing.JFrame {
     }//GEN-LAST:event_constantesActionPerformed
 
     private void valor1boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valor1boxActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_valor1boxActionPerformed
 
     private void valor2boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valor2boxActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_valor2boxActionPerformed
 
     private void valor3boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valor3boxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_valor3boxActionPerformed
 
+    }//GEN-LAST:event_valor3boxActionPerformed
+    
+    /**
+     * 
+     * @throws IllegalArgumentException Si el texto ingresado por el usuario no es un numero
+     */
     private void numciclosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numciclosKeyTyped
         // De este modo el usuario solo va a poder ingresar numeros
         int key = evt.getKeyChar();
@@ -382,57 +439,93 @@ public class NuevaSimulacion extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_numciclosKeyTyped
 
+    /**
+     * 
+     * @throws IllegalArgumentException Si el texto ingresado por el usuario no es un numero
+     */
     private void numhormigasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numhormigasKeyTyped
         // De este modo el usuario solo va a poder ingresar numeros    
         int key = evt.getKeyChar();
         boolean num = key >= 48 && key <=57;
         if (!num) {
             evt.consume();
+            // Si el usuario intenta ingresar un valor que no sea un numero, se mostrara un mensaje indicandole que solo puede ingresar numeros
+            JOptionPane.showMessageDialog(null, "Solo puede ingresar numeros");
         }
     }//GEN-LAST:event_numhormigasKeyTyped
 
+    /**
+     * 
+     * @throws IllegalArgumentException Si el texto ingresado por el usuario no es un numero
+     */
     private void valor1boxKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_valor1boxKeyTyped
         // De este modo el usuario solo va a poder ingresar numeros    
         int key = evt.getKeyChar();
         boolean num = key >= 48 && key <=57;
         if (!num) {
             evt.consume();
+            // Si el usuario intenta ingresar un valor que no sea un numero, se mostrara un mensaje indicandole que solo puede ingresar numeros
+            JOptionPane.showMessageDialog(null, "Solo puede ingresar numeros");
         }
     }//GEN-LAST:event_valor1boxKeyTyped
 
+     /**
+     * 
+     * @throws IllegalArgumentException Si el texto ingresado por el usuario no es un numero
+     */
     private void valor2boxKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_valor2boxKeyTyped
         // De este modo el usuario solo va a poder ingresar numeros    
         int key = evt.getKeyChar();
         boolean num = key >= 48 && key <=57;
         if (!num) {
             evt.consume();
+            // Si el usuario intenta ingresar un valor que no sea un numero, se mostrara un mensaje indicandole que solo puede ingresar numeros
+            JOptionPane.showMessageDialog(null, "Solo puede ingresar numeros");
         }
     }//GEN-LAST:event_valor2boxKeyTyped
 
+     /**
+     * 
+     * @throws IllegalArgumentException Si el texto ingresado por el usuario no es un numero
+     */
     private void valor3boxKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_valor3boxKeyTyped
         // De este modo el usuario solo va a poder ingresar numeros    
         int key = evt.getKeyChar();
         boolean num = key >= 48 && key <=57;
         if (!num) {
             evt.consume();
+            // Si el usuario intenta ingresar un valor que no sea un numero, se mostrara un mensaje indicandole que solo puede ingresar numeros
+            JOptionPane.showMessageDialog(null, "Solo puede ingresar numeros");
         }
     }//GEN-LAST:event_valor3boxKeyTyped
 
+     /**
+     * 
+     * @throws IllegalArgumentException Si el texto ingresado por el usuario no es un numero
+     */
     private void ciudadpartidaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ciudadpartidaKeyTyped
         // De este modo el usuario solo va a poder ingresar numeros    
         int key = evt.getKeyChar();
         boolean num = key >= 48 && key <=57;
         if (!num) {
             evt.consume();
+            // Si el usuario intenta ingresar un valor que no sea un numero, se mostrara un mensaje indicandole que solo puede ingresar numeros
+            JOptionPane.showMessageDialog(null, "Solo puede ingresar numeros");
         }
     }//GEN-LAST:event_ciudadpartidaKeyTyped
 
+     /**
+     * 
+     * @throws IllegalArgumentException Si el texto ingresado por el usuario no es un numero
+     */
     private void ciudadllegadaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ciudadllegadaKeyTyped
         // De este modo el usuario solo va a poder ingresar numeros    
         int key = evt.getKeyChar();
         boolean num = key >= 48 && key <=57;
         if (!num) {
             evt.consume();
+            // Si el usuario intenta ingresar un valor que no sea un numero, se mostrara un mensaje indicandole que solo puede ingresar numeros
+            JOptionPane.showMessageDialog(null, "Solo puede ingresar numeros");
         }
     }//GEN-LAST:event_ciudadllegadaKeyTyped
     

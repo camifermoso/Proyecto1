@@ -1,8 +1,12 @@
 package interfaz;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author camilafermosoiglesias
+ * @version 1.9
+ * @since 13-02-2024
  */
 
 public class EliminarCiudad extends javax.swing.JFrame {
@@ -72,9 +76,25 @@ public class EliminarCiudad extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Ciudad que desea eliminar:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, 20));
+
+        ciudadaeliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ciudadaeliminarActionPerformed(evt);
+            }
+        });
+        ciudadaeliminar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ciudadaeliminarKeyTyped(evt);
+            }
+        });
         getContentPane().add(ciudadaeliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 150, -1));
 
         eliminarciudad.setText("Eliminar");
+        eliminarciudad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarciudadActionPerformed(evt);
+            }
+        });
         getContentPane().add(eliminarciudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 180, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/background3.png"))); // NOI18N
@@ -83,16 +103,55 @@ public class EliminarCiudad extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+     /**
+     * @param text X
+     * @param onClickAction Se cierra el programa
+     */
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
 
         this.dispose();
     }//GEN-LAST:event_ExitActionPerformed
 
+     /**
+     * 
+     * @param text ←
+     * @param onClickAction Volver a la ventana home (v1)
+     */
     private void BackHome2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackHome2ActionPerformed
         this.setVisible(false);
         v1.setLocationRelativeTo(null);
         v1.setVisible(true);
     }//GEN-LAST:event_BackHome2ActionPerformed
+
+    private void ciudadaeliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ciudadaeliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ciudadaeliminarActionPerformed
+
+    /**
+     * 
+     * @param onClickAction Eliminar la ciudad ingresada por el usuario
+     */
+    private void eliminarciudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarciudadActionPerformed
+        int ciudad = 0;
+        ciudad = Integer.parseInt(ciudadaeliminar.getText());
+        
+        ciudadaeliminar.setText("");
+    }//GEN-LAST:event_eliminarciudadActionPerformed
+     
+    /**
+     * 
+     * @throws IllegalArgumentException Si el texto ingresado por el usuario no es un numero
+     */
+    private void ciudadaeliminarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ciudadaeliminarKeyTyped
+        // De este modo el usuario solo va a poder ingresar numeros    
+        int key = evt.getKeyChar();
+        boolean num = key >= 48 && key <=57;
+        if (!num) {
+            evt.consume();
+             // Si el usuario intenta ingresar un valor que no sea un numero, se mostrara un mensaje indicandole que solo puede ingresar numeros
+            JOptionPane.showMessageDialog(null, "Solo puede ingresar numeros");
+        }
+    }//GEN-LAST:event_ciudadaeliminarKeyTyped
 
     /**
      * @param args the command line arguments

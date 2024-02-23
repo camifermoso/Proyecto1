@@ -6,30 +6,31 @@ import java.awt.Color;
 /**
  *
  * @author camilafermosoiglesias
+ * @version 1.9
+ * @since 13-02-2024
  */
 
 public class Home extends javax.swing.JFrame {
 
     /**
      * Creates new form Home
+     * 
+     * @param Inicializa las ventanas y esconde las que no estan en uso 
      */
     public Home() {
+
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         
         // No se habilitan los botones al iniciar el programa ya que es necesario cargar un grafo primero
         // para poder acceder a las siguientes opciones
-       
-        /*
+
         NuevaSimulacion.setEnabled(false);
         AgregarCiudad.setEnabled(false);
         EliminarCiudad.setEnabled(false);
         GuardarGrafo.setEnabled(false);
-        */
-        
-        // en el boton, get nuevasimulacion
-        // y que modifique a true
+     
     }
 
     @SuppressWarnings("unchecked")
@@ -115,32 +116,62 @@ public class Home extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * @param text X
+     * @param onClickAction Se cierra el programa
+     */
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         this.dispose();
     }//GEN-LAST:event_ExitActionPerformed
-
+    
+    /**
+     * @param text Nueva Simulacion
+     * @param onClickAction Se abre la ventana de nueva simulacion
+     */
     private void NuevaSimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuevaSimulacionActionPerformed
         // NuevaSimulacion.setBackground(new java.awt.Color(5,5,5));
         NuevaSimulacion v2 = new NuevaSimulacion(this);
     }//GEN-LAST:event_NuevaSimulacionActionPerformed
-
+    
+    /**
+     * @param text Agregar Ciudad
+     * @param onClickAction Se abre la ventana que permite agregar ciudad
+     */
     private void AgregarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarCiudadActionPerformed
         AgregarCiudad v3 = new AgregarCiudad(this);
     }//GEN-LAST:event_AgregarCiudadActionPerformed
 
+    /**
+     * @param text Eliminar Ciudad
+     * @param onClickAction Se abre la ventana de eliminar ciudad
+     */
     private void EliminarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarCiudadActionPerformed
        EliminarCiudad v4 = new EliminarCiudad(this);
     }//GEN-LAST:event_EliminarCiudadActionPerformed
-
+    
+     /**
+     * @param text Guardar Grafo
+     * @param onClickAction Guarda el grafo
+     * @return Archivo txt del grafo
+     */
     private void GuardarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarGrafoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_GuardarGrafoActionPerformed
-
+    
+    /**
+     * @param text Cargar grafo
+     * @param onClickAction Se abre la ventana para cargar grafo
+     */
     private void CargarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarGrafoActionPerformed
         CargarGrafo v5 = new CargarGrafo(this);
         
-        //Aqui hay que poner que si se cargo un grafo, los otros botones se habilitan
+        // Despues de cargar el grafo, los otros botones se habilitan
+        NuevaSimulacion.setEnabled(true);
+        AgregarCiudad.setEnabled(true);
+        EliminarCiudad.setEnabled(true);
+        GuardarGrafo.setEnabled(true);
+
     }//GEN-LAST:event_CargarGrafoActionPerformed
 
     /**

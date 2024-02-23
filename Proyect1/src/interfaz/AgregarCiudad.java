@@ -1,8 +1,12 @@
 package interfaz;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author camilafermosoiglesias
+ * @version 1.9
+ * @since 13-02-2024
  */
 
 public class AgregarCiudad extends javax.swing.JFrame {
@@ -33,6 +37,7 @@ public class AgregarCiudad extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         destino = new javax.swing.JComboBox<>();
         distancia = new javax.swing.JTextField();
+        agregararista = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jLabel5.setFont(new java.awt.Font("Futura", 1, 36)); // NOI18N
@@ -108,17 +113,34 @@ public class AgregarCiudad extends javax.swing.JFrame {
         });
         getContentPane().add(distancia, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 210, 80, -1));
 
+        agregararista.setText("Agregar arista");
+        agregararista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregararistaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(agregararista, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, -1, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/background3.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * @param text X
+     * @param onClickAction Se cierra el programa
+     */
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
 
         this.dispose();
     }//GEN-LAST:event_ExitActionPerformed
 
+     /**
+     * 
+     * @param text ←
+     * @param onClickAction Volver a la ventana home (v1)
+     */
     private void BackHome2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackHome2ActionPerformed
         this.setVisible(false);
         v1.setLocationRelativeTo(null);
@@ -131,6 +153,8 @@ public class AgregarCiudad extends javax.swing.JFrame {
         boolean num = key >= 48 && key <=57;
         if (!num) {
             evt.consume();
+             // Si el usuario intenta ingresar un valor que no sea un numero, se mostrara un mensaje indicandole que solo puede ingresar numeros
+            JOptionPane.showMessageDialog(null, "Solo puede ingresar numeros");
         }
     }//GEN-LAST:event_nombreciudadKeyTyped
 
@@ -140,13 +164,33 @@ public class AgregarCiudad extends javax.swing.JFrame {
         boolean num = key >= 48 && key <=57;
         if (!num) {
             evt.consume();
+             // Si el usuario intenta ingresar un valor que no sea un numero, se mostrara un mensaje indicandole que solo puede ingresar numeros
+            JOptionPane.showMessageDialog(null, "Solo puede ingresar numeros");
         }
     }//GEN-LAST:event_distanciaKeyTyped
-
+    
+    /**
+     * 
+     * @param onClickAction Agrega la ciudad
+     */
     private void agregarciudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarciudadActionPerformed
+        int ciudad = 0;
+        ciudad = Integer.parseInt(nombreciudad.getText());
+        
         // Cuando se haga click en este boton, queremos que quede en blanco la caja de texto
         nombreciudad.setText("");
     }//GEN-LAST:event_agregarciudadActionPerformed
+
+    /**
+     * 
+     * @param onClickAction Agrega la arista de la ciudad
+     */
+    private void agregararistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregararistaActionPerformed
+        int distanciadearista = 0;
+        distanciadearista = Integer.parseInt(distancia.getText());
+        
+        distancia.setText("");
+    }//GEN-LAST:event_agregararistaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -187,6 +231,7 @@ public static void main(String args[]) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackHome2;
     private javax.swing.JButton Exit;
+    private javax.swing.JButton agregararista;
     private javax.swing.JButton agregarciudad;
     private javax.swing.JComboBox<String> destino;
     private javax.swing.JTextField distancia;

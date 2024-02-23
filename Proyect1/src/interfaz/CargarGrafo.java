@@ -3,6 +3,8 @@ package interfaz;
 /**
  *
  * @author camilafermosoiglesias
+ * @version 1.9
+ * @since 13-02-2024
  */
 
 public class CargarGrafo extends javax.swing.JFrame {
@@ -80,7 +82,14 @@ public class CargarGrafo extends javax.swing.JFrame {
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         this.dispose();
     }//GEN-LAST:event_ExitActionPerformed
-
+    
+    /**
+     * Este boton permite volver a la pagina de inicio
+     * 
+     * @param text ←
+     * @param onClickAction Volver a la pagina de inicio
+     */
+    
     private void BackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackHomeActionPerformed
         this.setVisible(false);
         v1.setLocationRelativeTo(null);
@@ -88,7 +97,7 @@ public class CargarGrafo extends javax.swing.JFrame {
     }//GEN-LAST:event_BackHomeActionPerformed
 
     /**
-     * @param args the command line arguments
+     * @param args Se muestra la ventana para cargar grafo
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
